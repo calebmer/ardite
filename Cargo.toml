@@ -1,0 +1,7 @@
+[package]
+name = "ardite"
+version = "0.1.0"
+authors = ["Victor M. Suarez <svmnotn@gmail.com>",
+           "Caleb Meredith <calebmeredith8@gmail.com>"]
+
+[dependencies]

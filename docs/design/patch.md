@@ -2,7 +2,15 @@
 The patch objects are inspired by the JSON patch standard (RFC 6902). There are two types of patches to consider. One which is the patches sent by the client, which follows the patch standard exactly. The other is the patches physically saved by Ardite.
 
 ## Client Patches
-This is the main type of patch a user will deal with. When stored a few extra keys will be added for identification.
+This is the main type of patch a user will deal with. When stored a few extra keys will be added for identification. A client patch looks like the following:
+
+```json
+{
+  "op": "add",
+  "path": "/person/name",
+  "value": "Caleb Meredith"
+}
+```
 
 ### Validation
 Every single patch must be able to be validated on its own. This means data must not in a reduced state (the exception is the `test` operation).

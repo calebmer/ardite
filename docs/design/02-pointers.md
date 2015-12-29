@@ -73,6 +73,6 @@ Like this?
 }
 ```
 
-As you can see, none of these interpretations are accurate. When turning into JSON, Ardite will prefer the second format if the `/profile/about` format is the most recent (recency will be better explained when we talk about the ledger). However, if `/profile` is the most recent, Ardite will prefer the first JSON format. Ardite would never create a document which looks like the third format (for more information on how this is interpreted, see the reducing section of the design docs).
+As you can see, none of these interpretations are very helpful. When turning into JSON, Ardite will prefer the third format where the second value will be whatever is the most recent (recency will be better explained when we talk about the ledger).
 
 Because of this weirdness, this scenario should be avoided unless there is a really good reason. Eventually, you will be able to use a schema to force this scenario to never happen.

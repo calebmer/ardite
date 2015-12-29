@@ -1,7 +1,15 @@
 [package]
 name = "ardite"
 version = "0.1.0"
+description = "Ardite is a highly flexible no-SQL and immutable database."
+homepage = "https://github.com/calebmer/ardite"
+repository = "calebmer/ardite"
+readme = "README.md"
+license = "MIT"
+keywords = ["database",
+			"immutable",
+            "nosql"]
 authors = ["Victor M. Suarez <svmnotn@gmail.com>",
-           "Caleb Meredith <calebmeredith8@gmail.com>"]
+		   "Caleb Meredith <calebmeredith8@gmail.com>"]
 
 [dependencies]

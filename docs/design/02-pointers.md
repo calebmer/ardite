@@ -73,6 +73,17 @@ Like this?
 }
 ```
 
-As you can see, none of these interpretations are very helpful. When turning into JSON, Ardite will prefer the third format where the second value will be whatever is the most recent (recency will be better explained when we talk about the ledger).
+As you can see, none of these interpretations are very helpful. When turning into JSON the third format is what would naturally be assumed, where the second value will be whatever is the most recent (recency will be better explained when we talk about the ledger). This is a very ugly solution, therefore in most scenarios Ardite prefers the following format:
+
+```json
+{
+  "profile": {
+    "$value": "Budd",
+    "about": "I‘m a web developer!"
+  }
+}
+```
+
+Where the new `$value` property represents `/profile`.
 
 Because of this weirdness, this scenario should be avoided unless there is a really good reason. Eventually, you will be able to use a schema to force this scenario to never happen.

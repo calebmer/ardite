@@ -61,6 +61,7 @@ This is a continuation of the discussion in the pointers design document discuss
 /foo/bar = 2
 /foo/qux = 3
 /foo/bar = 4
+
 /buz/qux = 5
 /buz = 6
 ```

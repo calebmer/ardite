@@ -73,6 +73,17 @@ Like this?
 }
 ```
 
-As you can see, none of these interpretations are accurate. When turning into JSON, Ardite will prefer the second format if the `/profile/about` format is the most recent (recency will be better explained when we talk about the ledger). However, if `/profile` is the most recent, Ardite will prefer the first JSON format. Ardite would never create a document which looks like the third format (for more information on how this is interpreted, see the reducing section of the design docs).
+As you can see, none of these interpretations are very helpful. The first and second one hide parts of the state whilst the third is not valid JSON. Thus Ardite will provide the following format in most scenarios:
+
+```json
+{
+  "profile": {
+    "$value": "Budd",
+    "about": "I‘m a web developer!"
+  }
+}
+```
+
+Where the new `$value` property represents `/profile`.
 
 Because of this weirdness, this scenario should be avoided unless there is a really good reason. Eventually, you will be able to use a schema to force this scenario to never happen.

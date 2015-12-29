@@ -52,36 +52,3 @@ Easy! Obviously this approach will be most performant for values recently added 
 This method is also not very performant in large ledgers. For a super performant way to read data from Ardite, read the next design document on views.
 
 One other behavior of the head reduction which is important to understand is that it cannot get all the key/value pairs in a higher hierarchy. For example, trying to reduce `/profile` from the head will *fail*. This is because we do not know when to stop. Trying to do this will throw an error as soon as the algorithm hits `/profile/likes/1` on the ledger (or another hierarchical value). This error can be preemptively caught when using a schema.
-
-## Hierarchical Conflicts
-This is a continuation of the discussion in the pointers design document discussing how data is reduced (with both methods) when there are hierarchical conflicts. Take the following contrived example (without types this time):
-
-```
-/foo = 1
-/foo/bar = 2
-/foo/qux = 3
-/foo/bar = 4
-
-/buz/qux = 5
-/buz = 6
-```
-
-Now let‘s reduce it!
-
-### From the Tail
-A tail reduction would look like the following:
-
-```
-/foo/qux = 3
-/foo/bar = 4
-/buz = 6
-```
-
-When we see that `/foo/bar` should be set, not only do we remove old references to `/foo/bar` in our final result, but also references to `/foo`. Likewise, when we see that `/buz` was set, not only to remove old references to `/buz`, but also old references to its children like `/buz/qux`.
-
-### From the Head
-Asking for `/buz/qux` from the head would return null. This is because we immediately saw that `/buz` was set, which overrides its children.
-
-Asking for `/foo` throws an error, because in order to find all the sub values of `/foo` we need a tail reduction.
-
-It is important to remember that hierarchical conflicts will be much rarer in a situation where you implement a strict schema.

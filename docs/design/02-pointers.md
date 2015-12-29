@@ -73,7 +73,7 @@ Like this?
 }
 ```
 
-As you can see, none of these interpretations are very helpful. When turning into JSON the third format is what would naturally be assumed, where the second value will be whatever is the most recent (recency will be better explained when we talk about the ledger). This is a very ugly solution, therefore in most scenarios Ardite prefers the following format:
+As you can see, none of these interpretations are very helpful. The first and second one hide parts of the state whilst the third is not valid JSON. Thus Ardite will provide the following format in most scenarios:
 
 ```json
 {

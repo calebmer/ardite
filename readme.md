@@ -5,12 +5,12 @@ Ardite is a highly flexible no-SQL and immutable database.
 This database won‘t be considered feature complete (at least for now) until 2.0, but it will be considered ready for production testing at 1.0.
 
 ### 1.0: To be completed late summer 2016
-- [ ]: Ledger Service.
-- [ ]: View Service.
+- [ ] Ledger Service.
+- [ ] View Service.
 
 ### 2.0: To be completed late summer 2017
-- [ ]: Data Schemas.
-- [ ]: Roles and Permissions.
+- [ ] Data Schemas.
+- [ ] Roles and Permissions.
 
 ## Inspiration
 - [Turning the database inside out](http://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/), a must read to understand what Ardite is aiming to be.
